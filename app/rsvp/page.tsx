@@ -87,33 +87,37 @@ function SprocketsRow({ count = 10 }: { count?: number }) {
 }
 
 function FilmStripHorizontal() {
+  // Duplicate photos for seamless infinite loop
+  const frames = [1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6]
   return (
     <div
-      className="lg:hidden w-full bg-[#0f0f0f] select-none mb-10"
+      className="lg:hidden w-full bg-[#0f0f0f] select-none overflow-hidden mt-4 mb-10"
       style={{ boxShadow: '0 8px 32px rgba(0,0,0,0.4)' }}
     >
-      <SprocketsRow />
-      <div className="flex gap-0.5 px-0.5">
-        {[1, 2, 3, 4].map((n) => (
-          <div key={n} className="flex-1 bg-[#1a1a1a] overflow-hidden" style={{ height: '110px' }}>
-            <img
-              src={`/images/rsvp/photo-${n}.jpg`}
-              alt=""
-              aria-hidden="true"
-              className="w-full h-full object-cover"
-              onError={(e) => { (e.currentTarget as HTMLImageElement).style.opacity = '0' }}
-            />
+      <SprocketsRow count={14} />
+      {/* Scrolling track */}
+      <div
+        className="flex"
+        style={{ animation: 'filmScroll 14s linear infinite' }}
+      >
+        {frames.map((n, i) => (
+          <div key={i} className="flex-shrink-0 mx-px my-0.5" style={{ width: '28vw', height: '120px' }}>
+            <div className="w-full h-full bg-[#1a1a1a] overflow-hidden">
+              <img
+                src={`/images/rsvp/photo-${n}.jpg`}
+                alt=""
+                aria-hidden="true"
+                className="w-full h-full object-cover"
+                onError={(e) => { (e.currentTarget as HTMLImageElement).style.opacity = '0' }}
+              />
+            </div>
+            <p className="font-mono text-[7px] text-white/20 text-right pr-1 tracking-widest">
+              {String(n).padStart(2, '0')}▶
+            </p>
           </div>
         ))}
       </div>
-      <div className="flex justify-between px-6 py-0.5">
-        {[1, 2, 3, 4].map((n) => (
-          <p key={n} className="font-mono text-[7px] text-white/20 tracking-widest">
-            {String(n).padStart(2, '0')}▶
-          </p>
-        ))}
-      </div>
-      <SprocketsRow />
+      <SprocketsRow count={14} />
     </div>
   )
 }

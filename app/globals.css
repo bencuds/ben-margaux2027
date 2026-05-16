@@ -22,6 +22,11 @@
   50%       { transform: rotate(2deg) translateY(-10px); }
 }
 
+@keyframes filmScroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
 /* ── Scroll reveal ───────────────────────────────────────── */
 .sr {
   opacity: 0;
