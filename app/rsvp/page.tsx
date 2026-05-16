@@ -199,6 +199,7 @@ export default function RSVPPage() {
       if (data.valid) {
         setInvite({ name: data.name, maxGuests: data.maxGuests })
         setForm((f) => ({ ...f, guestNames: Array(data.maxGuests).fill('') }))
+        window.scrollTo({ top: 0, behavior: 'smooth' })
       } else {
         setError("That code doesn't look right — check your invitation and try again.")
       }
@@ -348,7 +349,10 @@ export default function RSVPPage() {
                     { label: "Sorry, can't make it", value: 'no' },
                   ]}
                   value={form.attending}
-                  onChange={(v) => setForm((f) => ({ ...f, attending: v }))}
+                  onChange={(v) => {
+                    setForm((f) => ({ ...f, attending: v }))
+                    if (v === 'yes') window.scrollTo({ top: 0, behavior: 'smooth' })
+                  }}
                 />
               </div>
 
