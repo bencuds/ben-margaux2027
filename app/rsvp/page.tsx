@@ -76,6 +76,48 @@ function Sprockets() {
   )
 }
 
+function SprocketsRow({ count = 10 }: { count?: number }) {
+  return (
+    <div className="flex justify-around items-center h-5 px-1">
+      {[...Array(count)].map((_, i) => (
+        <div key={i} className="h-[7px] w-[10px] rounded-[1.5px] bg-white opacity-85" />
+      ))}
+    </div>
+  )
+}
+
+function FilmStripHorizontal() {
+  return (
+    <div
+      className="lg:hidden w-full bg-[#0f0f0f] select-none mb-10"
+      style={{ boxShadow: '0 8px 32px rgba(0,0,0,0.4)' }}
+    >
+      <SprocketsRow />
+      <div className="flex gap-0.5 px-0.5">
+        {[1, 2, 3, 4].map((n) => (
+          <div key={n} className="flex-1 bg-[#1a1a1a] overflow-hidden" style={{ height: '110px' }}>
+            <img
+              src={`/images/rsvp/photo-${n}.jpg`}
+              alt=""
+              aria-hidden="true"
+              className="w-full h-full object-cover"
+              onError={(e) => { (e.currentTarget as HTMLImageElement).style.opacity = '0' }}
+            />
+          </div>
+        ))}
+      </div>
+      <div className="flex justify-between px-6 py-0.5">
+        {[1, 2, 3, 4].map((n) => (
+          <p key={n} className="font-mono text-[7px] text-white/20 tracking-widest">
+            {String(n).padStart(2, '0')}▶
+          </p>
+        ))}
+      </div>
+      <SprocketsRow />
+    </div>
+  )
+}
+
 function FilmStrip() {
   // Frames: 0 = dummy top, 1–4 = real photos, 5 = dummy bottom
   // Container clips to show ~60px of dummy at each end + 4 complete frames
@@ -273,6 +315,8 @@ export default function RSVPPage() {
           <div className="max-w-4xl mx-auto px-4 md:px-6 py-16 md:py-28">
 
             {/* Header */}
+            <FilmStripHorizontal />
+
             <div className="max-w-2xl">
               <p className="font-sans text-xs tracking-[0.4em] uppercase text-fuchsia mb-4">
                 Welcome
