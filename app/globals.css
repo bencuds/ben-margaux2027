@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-sandy text-jungle antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif text-jungle;
+  }
+}
+
+
+@keyframes filmDrift {
+  0%, 100% { transform: rotate(2deg) translateY(0px); }
+  50%       { transform: rotate(2deg) translateY(-10px); }
+}
+
+/* ── Scroll reveal ───────────────────────────────────────── */
+.sr {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+.sr.sr-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Fluid heading sizes */
+  .heading-hero {
+    font-size: clamp(4rem, 10vw, 8rem);
+    line-height: 1.0;
+  }
+
+  .heading-section {
+    font-size: clamp(2.25rem, 4.5vw, 4rem);
+    line-height: 1.1;
+  }
+}
