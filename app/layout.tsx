@@ -18,6 +18,7 @@ const jost = Jost({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://benandmargaux.com'),
   title: 'Ben & Margaux | 4–11 April 2027',
   description:
     'Join us as we celebrate our marriage in the Philippines — Tagaytay & Siargao, 4–11 April 2027. #BenAndMargaux2027',
