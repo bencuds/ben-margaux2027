@@ -11,11 +11,18 @@ async function getInviteCodes(): Promise<InviteMap> {
   if (cache && now - cache.fetchedAt < CACHE_TTL_MS) return cache.data
 
   const url = process.env.GOOGLE_SHEET_WEBHOOK
-  if (!url) throw new Error('Webhook not configured')
+  if (!url) {
+    console.error('GOOGLE_SHEET_WEBHOOK is not set')
+    throw new Error('Webhook not configured')
+  }
 
+  console.log('Fetching invite codes from:', url.slice(0, 60) + '...')
   const res = await fetch(url, { cache: 'no-store', redirect: 'follow' })
+  console.log('Response status:', res.status, res.ok)
   if (!res.ok) throw new Error(`Sheet fetch failed: ${res.status}`)
-  const data = (await res.json()) as InviteMap
+  const text = await res.text()
+  console.log('Response preview:', text.slice(0, 200))
+  const data = JSON.parse(text) as InviteMap
   cache = { data, fetchedAt: now }
   return data
 }
