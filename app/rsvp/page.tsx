@@ -127,7 +127,7 @@ function FilmStrip() {
   // Container clips to show ~60px of dummy at each end + 4 complete frames
   return (
     <div className="hidden lg:block flex-shrink-0 sticky top-32 self-start"
-      style={{ animation: 'filmDrift 7s ease-in-out infinite', boxShadow: '8px 16px 40px rgba(0,0,0,0.45)' }}>
+      style={{ boxShadow: '8px 16px 40px rgba(0,0,0,0.45)' }}>
 
       <div className="w-[196px] overflow-hidden rounded-sm"
         style={{ height: '1120px' }}>
