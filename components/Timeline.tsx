@@ -1,4 +1,5 @@
 import ScrollReveal from './ScrollReveal'
+import { Mountain, Wine, Palmtree } from 'lucide-react'
 
 const events = [
   {
@@ -63,48 +64,10 @@ const styles = {
   },
 }
 
-function VolcanoIcon({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={className}>
-      <path d="M2 20h20" />
-      <path d="M4 20L9.5 9l1.5 2.5L12 9l1 2.5L14.5 9 20 20" />
-      <path d="M10.5 7Q12 4 13.5 7" />
-    </svg>
-  )
-}
-
-function ChampagneIcon({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={className}>
-      <path d="M5 3L3 9h4L5 3z" />
-      <line x1="5" y1="9" x2="5" y2="14" />
-      <line x1="3" y1="14" x2="7" y2="14" />
-      <path d="M19 3L21 9h-4L19 3z" />
-      <line x1="19" y1="9" x2="19" y2="14" />
-      <line x1="17" y1="14" x2="21" y2="14" />
-      <line x1="9" y1="4" x2="11" y2="6" />
-      <line x1="12" y1="3" x2="12" y2="5" />
-      <line x1="15" y1="4" x2="13" y2="6" />
-    </svg>
-  )
-}
-
-function PalmIcon({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={className}>
-      <path d="M13 22Q11 17 12 12" />
-      <path d="M12 12Q8 10 5 12Q7 7 12 10" />
-      <path d="M12 10Q12 6 14 4Q16 6 14 10" />
-      <path d="M12 12Q16 10 19 12Q17 7 12 10" />
-      <path d="M12 14Q10 17 11 20" />
-    </svg>
-  )
-}
-
 const icons = {
-  mango:   VolcanoIcon,
-  fuchsia: ChampagneIcon,
-  jungle:  PalmIcon,
+  mango:   Mountain,
+  fuchsia: Wine,
+  jungle:  Palmtree,
 }
 
 const leafStyle: React.CSSProperties = {
@@ -162,7 +125,7 @@ export default function Timeline() {
                 className={`relative flex flex-col w-full h-full rounded-2xl border transition-all duration-300 ${isFeatured ? 'p-10' : 'p-8'} ${s.card}`}
               >
                 {/* Accent icon — bottom left */}
-                {(() => { const Icon = icons[event.accent]; return <Icon className={`absolute bottom-5 left-5 w-10 h-10 opacity-[0.15] ${s.icon}`} /> })()}
+                {(() => { const Icon = icons[event.accent]; return <Icon className={`absolute bottom-5 left-5 w-9 h-9 opacity-30 ${s.icon}`} /> })()}
                 {/* Sparkles for the featured card */}
                 {isFeatured && (
                   <>
