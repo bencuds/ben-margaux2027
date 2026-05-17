@@ -1,5 +1,5 @@
 import ScrollReveal from './ScrollReveal'
-import { Mountain, Wine, Palmtree } from 'lucide-react'
+import { Palmtree } from 'lucide-react'
 
 const events = [
   {
@@ -64,9 +64,45 @@ const styles = {
   },
 }
 
+function VolcanoIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      {/* Base line */}
+      <line x1="1" y1="21" x2="23" y2="21" />
+      {/* Wide curved slopes */}
+      <path d="M2 21Q6 14 10 9" />
+      <path d="M22 21Q18 14 14 9" />
+      {/* Crater opening */}
+      <path d="M10 9Q12 7 14 9" />
+      {/* Eruption puffs */}
+      <path d="M10.5 7Q12 4.5 13.5 7" />
+      <path d="M11.5 4.5Q12 2.5 12.5 4.5" />
+    </svg>
+  )
+}
+
+function CheersIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      {/* Left flute */}
+      <path d="M4 2h5L7 9H6L4 2z" />
+      <line x1="6.5" y1="9" x2="6.5" y2="16" />
+      <line x1="5" y1="16" x2="8" y2="16" />
+      {/* Right flute */}
+      <path d="M15 2h5l-2 7h-1l-2-7z" />
+      <line x1="17.5" y1="9" x2="17.5" y2="16" />
+      <line x1="16" y1="16" x2="19" y2="16" />
+      {/* Clink sparkle between the two glasses */}
+      <line x1="9" y1="2" x2="11" y2="4" />
+      <line x1="12" y1="1" x2="12" y2="4" />
+      <line x1="15" y1="2" x2="13" y2="4" />
+    </svg>
+  )
+}
+
 const icons = {
-  mango:   Mountain,
-  fuchsia: Wine,
+  mango:   VolcanoIcon,
+  fuchsia: CheersIcon,
   jungle:  Palmtree,
 }
 
