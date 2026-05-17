@@ -1,12 +1,13 @@
-import BotanicalImage from './BotanicalImage'
-
 export default function Footer() {
   return (
     <footer className="bg-jungle-dark border-t border-jungle-light/20 py-7 px-6">
       <div className="max-w-4xl mx-auto text-center">
-        <BotanicalImage
-          src="/images/botanicals/hibiscus.png"
-          className="mx-auto mb-5 w-8 opacity-40 brightness-200"
+        <img
+          src="/images/hibiscus-icon.png"
+          alt=""
+          aria-hidden="true"
+          className="mx-auto mb-5 w-12 h-12 object-contain"
+          style={{ filter: 'brightness(0) invert(1)', opacity: 0.5 }}
         />
 
         <p className="font-serif italic text-2xl text-sandy/80 mb-1">Ben &amp; Margaux</p>

@@ -126,7 +126,7 @@ function FilmStrip() {
   // Frames: 0 = dummy top, 1–4 = real photos, 5 = dummy bottom
   // Container clips to show ~60px of dummy at each end + 4 complete frames
   return (
-    <div className="hidden lg:block flex-shrink-0 sticky top-32 self-start"
+    <div className="hidden lg:block flex-shrink-0 self-start"
       style={{ boxShadow: '8px 16px 40px rgba(0,0,0,0.45)' }}>
 
       <div className="w-[196px] overflow-hidden rounded-sm"
