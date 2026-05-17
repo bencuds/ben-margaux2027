@@ -3,10 +3,10 @@ export default function Footer() {
     <footer className="bg-jungle-dark border-t border-jungle-light/20 py-7 px-6">
       <div className="max-w-4xl mx-auto text-center">
         <img
-          src="/images/hibiscus-icon.png"
+          src="/images/hibiscus-icon-square.png"
           alt=""
           aria-hidden="true"
-          className="mx-auto mb-5 w-16"
+          className="mx-auto mb-5 w-10 h-10"
           style={{ filter: 'brightness(0) invert(1)', opacity: 0.6 }}
         />
 
