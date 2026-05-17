@@ -6,8 +6,8 @@ export default function Footer() {
           src="/images/hibiscus-icon.png"
           alt=""
           aria-hidden="true"
-          className="mx-auto mb-5 w-12 h-12 object-contain"
-          style={{ filter: 'brightness(0) invert(1)', opacity: 0.5 }}
+          className="mx-auto mb-5 w-16"
+          style={{ filter: 'brightness(0) invert(1)', opacity: 0.6 }}
         />
 
         <p className="font-serif italic text-2xl text-sandy/80 mb-1">Ben &amp; Margaux</p>
