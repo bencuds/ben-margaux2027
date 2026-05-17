@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="bg-jungle-dark border-t border-jungle-light/20 py-7 px-6">
       <div className="max-w-4xl mx-auto text-center">
         <BotanicalImage
-          src="/images/botanicals/flower-icon.png"
+          src="/images/botanicals/hibiscus.png"
           className="mx-auto mb-5 w-8 opacity-40 brightness-200"
         />
 
