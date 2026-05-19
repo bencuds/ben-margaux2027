@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Cormorant_Garamond, Jost } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
+import { GoogleAnalytics } from '@next/third-parties/google'
 import './globals.css'
 
 const cormorant = Cormorant_Garamond({
@@ -51,6 +52,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="font-sans bg-sandy text-jungle antialiased">
         {children}
         <Analytics />
+        <GoogleAnalytics gaId="G-GJCN4FDB9M" />
       </body>
     </html>
   )
