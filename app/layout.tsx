@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { Cormorant_Garamond, Jost } from 'next/font/google'
-import { Analytics } from '@vercel/analytics/react'
+import { Analytics } from '@vercel/analytics/next'
 import { GoogleAnalytics } from '@next/third-parties/google'
 import './globals.css'
 
